@@ -111,6 +111,14 @@ GIT
       thor (~> 1.0)
       zeitwerk (~> 2.5)
 
+GIT
+  remote: https://github.com/varvet/pundit
+  revision: d7c2e6e3bc1f5526f220a729090249635a7453d8
+  branch: main
+  specs:
+    pundit (2.2.0)
+      activesupport (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -251,6 +259,7 @@ DEPENDENCIES
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
+  pundit (~> 2.2)!
   rails!
   selenium-webdriver
   sprockets-rails
