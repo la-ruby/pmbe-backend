@@ -71,3 +71,4 @@ end
 gem "devise", "~> 4.8", :git => "https://github.com/heartcombo/devise", :branch => "main"
 
 gem "pundit", "~> 2.2", :git => "https://github.com/varvet/pundit", :branch => "main"
+gem "aws-sdk-s3", require: false
