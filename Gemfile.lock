@@ -28,6 +28,24 @@ GIT
       railties (>= 6.0.0)
 
 GIT
+  remote: https://github.com/kaminari/kaminari
+  revision: 2f0e0728f511e2807cc7ea5b7c81ee71c7c378e8
+  branch: master
+  specs:
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
+
+GIT
   remote: https://github.com/rails/rails.git
   revision: cf78ba0779cb8900b880051a4f1c103639f23578
   branch: 7-0-stable
@@ -283,6 +301,7 @@ DEPENDENCIES
   devise (~> 4.8)!
   importmap-rails
   jbuilder
+  kaminari (~> 1.2)!
   nice_partials (~> 0.1.6)!
   pg (~> 1.1)
   puma (~> 5.0)
