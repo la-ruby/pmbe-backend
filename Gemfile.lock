@@ -173,6 +173,13 @@ GIT
       activesupport (>= 3.0.0)
 
 GIT
+  remote: https://github.com/vcr/vcr
+  revision: 042fae33555eac5296b7de786c59db7b2bf10183
+  branch: master
+  specs:
+    vcr (6.1.0)
+
+GIT
   remote: https://github.com/y-yagi/minitest-test_profile
   revision: 30744bf387e51d7f947bcdb9341c686d020c2814
   branch: master
@@ -363,6 +370,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails!
   tzinfo-data
+  vcr (~> 6.1)!
   web-console
   webdrivers
   webmock (~> 3.14)!
