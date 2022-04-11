@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/bullet-train-co/nice_partials
+  revision: a39e2e958e97b99893d867ca1ddd5c5a46c8ae1e
+  branch: main
+  specs:
+    nice_partials (0.1.6)
+      actionview (>= 4.2.6)
+
+GIT
   remote: https://github.com/heartcombo/devise
   revision: 451ff6d49c71e543962d2b29d77f2e744b2d47e1
   branch: main
@@ -275,6 +283,7 @@ DEPENDENCIES
   devise (~> 4.8)!
   importmap-rails
   jbuilder
+  nice_partials (~> 0.1.6)!
   pg (~> 1.1)
   puma (~> 5.0)
   pundit (~> 2.2)!
