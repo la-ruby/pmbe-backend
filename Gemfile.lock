@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/Rykian/clockwork
+  revision: d64de659d46fdc7a44cb18ff6f91758791806a1e
+  branch: master
+  specs:
+    clockwork (3.0.0)
+      activesupport
+      tzinfo
+
+GIT
   remote: https://github.com/bblimke/webmock
   revision: 33d8810c2828fc17010e15cc3f21ad2c726a966f
   branch: master
@@ -351,6 +360,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk-s3
   capybara
+  clockwork (~> 3.0)!
   debug
   devise (~> 4.8)!
   factory_bot_rails (~> 6.2)!
