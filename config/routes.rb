@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :examples
   devise_for :users
 
-  get '/products/:display_name', to: 'products#show'
+  get '/products/:displayname', to: 'products#show'
   resource :spreadsheet, only: [:edit, :update]
   get '/upload', to: 'spreadsheets#edit'
 
