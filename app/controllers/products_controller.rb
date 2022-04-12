@@ -6,13 +6,15 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show ]
 
   def show
-    render json: { vendor_name: @product.display_name }
+    render json: { vendor_name: @product&.display_name || 'dummy_product_name' }
   end
 
   private
 
   def set_product
     @product = Product.find_by_display_name! Base64.decode64(params[:display_name])
+  rescue
+    nil
   end
 
   def relax_cors
