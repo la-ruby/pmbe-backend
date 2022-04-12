@@ -2,12 +2,11 @@
 
 # Must rename this
 class ProductsController < ApplicationController
-  before_action :verify_token, only: [:show]
   before_action :relax_cors
   before_action :set_product, only: %i[show]
 
   def show
-    if @product
+    if @product && params[:token] == ENV['PMBE_TOKEN']
       json = SpreadsheetsController::HEADINGS_HASH.keys.to_h do |item|
         [item.sub(/\Ax_/, ''), @product.attributes[item].presence || '-']
       end
@@ -30,9 +29,5 @@ class ProductsController < ApplicationController
     headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
     headers['Access-Control-Request-Method'] = '*'
     headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-  end
-
-  def verify_token
-    render json: {} and return unless params[:token] == ENV['PMBE_TOKEN']
   end
 end
