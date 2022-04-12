@@ -3,14 +3,12 @@
 # Must rename this
 class ProductsController < ApplicationController
   before_action :relax_cors
-  before_action :set_product, only: %i[ show ]
+  before_action :set_product, only: %i[show]
 
   def show
-    json = Hash[
-      SpreadsheetsController::HEADINGS_HASH.keys.collect{|item|
-        [item.sub(/\Ax_/,''), @product.attributes[item].presence || '-']
-      }
-    ]    
+    json = SpreadsheetsController::HEADINGS_HASH.keys.to_h do |item|
+      [item.sub(/\Ax_/, ''), @product.attributes[item].presence || '-']
+    end
     render json: json
   end
 
