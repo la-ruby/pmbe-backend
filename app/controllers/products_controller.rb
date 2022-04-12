@@ -6,9 +6,12 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show ]
 
   def show
-    a = SpreadsheetsController::HEADINGS_HASH.keys
-    b = Hash[SpreadsheetsController::HEADINGS_HASH.keys.collect{|item| [item, @product.attributes[item]]}]
-    render json: b
+    json = Hash[
+      SpreadsheetsController::HEADINGS_HASH.keys.collect{|item|
+        [item, @product.attributes[item].presence || '-']
+      }
+    ]    
+    render json: json
   end
 
   private
