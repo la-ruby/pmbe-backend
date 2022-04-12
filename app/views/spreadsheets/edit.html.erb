@@ -1,4 +1,11 @@
-<%= form_tag({action: :update}, multipart: true) do %>
-   <%= file_field_tag 'xml_file' %>
-   <%= submit_tag 'Submit' %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= form_tag({action: :update}, multipart: true) do %>
+         <%= file_field_tag 'xml_file' %>
+         <%= submit_tag 'Submit' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
