@@ -6,6 +6,9 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show ]
 
   def show
+    a = SpreadsheetsController::HEADINGS_HASH.keys
+    b = Hash[SpreadsheetsController::HEADINGS_HASH.keys.collect{|item| [item, @product.attributes[item]]}]
+    debugger
     render json: { vendor_name: @product&.display_name || "dummy_product_name#{rand(0..1000)}" }
   end
 
