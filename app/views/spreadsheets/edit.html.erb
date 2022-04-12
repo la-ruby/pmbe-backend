@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <%= form_tag({action: :update,}, multipart: true, method: :patch) do %>
-         Spreadheet: <%= file_field_tag 'spreadsheet' %>
+         Spreadheet: <%= file_field_tag 'spreadsheet', required: true %>
          <br>
 	 Token: <input name="token" required><br>
          <%= submit_tag 'Submit' %>
