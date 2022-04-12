@@ -14,9 +14,9 @@ class ExperimentsController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def experiment_params
-      params.require(:experiment).permit(:title, :body, :seed)
-    end
+    # def experiment_params
+    #   params.require(:experiment).permit(:title, :body, :seed)
+    # end
 
     def set_cors_headers
       # response.set_header "Access-Control-Allow-Origin", origin
