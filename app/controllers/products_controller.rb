@@ -5,7 +5,9 @@ class ProductsController < ApplicationController
   before_action :relax_cors
 
   def show
-    render plain: rand(1..999)
+    respond_to do |format|
+      format.json { render { vendor_name: 'ABC'} }
+    end
   end
 
   private
