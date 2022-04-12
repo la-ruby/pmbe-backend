@@ -33,6 +33,6 @@ class ProductsController < ApplicationController
   end
 
   def verify_token
-    raise unless params[:token] == ENV['PMBE_TOKEN']
+    render json: {} and return unless params[:token] == ENV['PMBE_TOKEN']
   end
 end
