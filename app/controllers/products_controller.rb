@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   private
 
   def set_product
-    Rails.logger.info "<< Request for  #{Base64.decode64(params[:displayname]}"
+    Rails.logger.info "<< Request for  #{Base64.decode64(params[:displayname])}"
     @product = Product.find_by_x_displayname! Base64.decode64(params[:displayname])
   end
 
