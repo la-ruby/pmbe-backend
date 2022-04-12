@@ -76,4 +76,9 @@ class SpreadsheetsController < ApplicationController
     flash[:notice] = "Uploaded #{Product.count}"
     redirect_to '/upload'
   end
+
+  private
+
+  def verify_token
+    raise unless params[:token] == ENV['PMBE_TOKEN']
 end
