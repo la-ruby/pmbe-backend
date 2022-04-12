@@ -3,16 +3,17 @@
 # Must rename this
 class ProductsController < ApplicationController
   before_action :relax_cors
+  before_action :set_product, only: %i[ show ]
 
   def show
-    # respond_to do |format|
-    # format.json {
     render json: { vendor_name: "ABC#{rand(1..100)}" }
-    # }
-    # end
   end
 
   private
+
+  def set_product
+    @product = Product.find_by_display_name params[:display_name]
+  end
 
   def relax_cors
     # response.set_header "Access-Control-Allow-Origin", origin
