@@ -7,7 +7,7 @@ class SpreadsheetsController < ApplicationController
 
   def update
     Rails.logger.info "Received #{params[:spreadsheet]}"
-    flash[:notice] = "Abc"
+    flash[:notice] = "Uploaded"
     redirect_to "/spreadsheet/edit"
   end
 end
