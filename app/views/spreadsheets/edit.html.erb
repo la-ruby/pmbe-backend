@@ -4,7 +4,7 @@
       <%= form_tag({action: :update,}, multipart: true, method: :patch) do %>
          Spreadheet: <%= file_field_tag 'spreadsheet' %>
          <br>
-	 Token <input><br>
+	 Token: <input><br>
          <%= submit_tag 'Submit' %>
       <% end %>
     </div>
