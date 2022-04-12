@@ -8,7 +8,9 @@ class SpreadsheetsController < ApplicationController
   def update
     Rails.logger.info "Received #{params[:spreadsheet]}"
     workbook = Roo::Spreadsheet.open params[:spreadsheet]
-    workbook.sheets.first.each_row_streaming(offset: 3) do |row|
+    worksheets = workbook.sheets
+    worksheet = worksheets.first
+    worksheet.each_row_streaming(offset: 3) do |row|
       next if row[0].is_a?(Roo::Excelx::Cell::Empty)
       puts row[0]
     end
