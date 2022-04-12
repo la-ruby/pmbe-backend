@@ -7,7 +7,6 @@ class SpreadsheetsController < ApplicationController
 
   def update
     Rails.logger.info "Received #{params[:spreadsheet]}"
-    debugger
     a = Roo::Spreadsheet.open(params[:spreadsheet])
     a.header_lines = 3
     a.each(division: 'DIVISION') do |item|
