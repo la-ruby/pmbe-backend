@@ -68,7 +68,6 @@ class SpreadsheetsController < ApplicationController
   def edit; end
 
   def update
-    Rails.logger.info "Received #{params[:spreadsheet]}"
     Product.delete_all
     Product.insert_all(Roo::Spreadsheet.open(params[:spreadsheet]).each(HEADINGS_HASH))
     Product.where(x_division: 'DIVISION').delete_all # this is a header that slipped through
