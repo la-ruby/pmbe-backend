@@ -5,6 +5,8 @@ class SpreadsheetsController < ApplicationController
   def edit
   end
 
-  private
+  def update
+  end
+    
 
 end
