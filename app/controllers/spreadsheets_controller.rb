@@ -8,7 +8,7 @@ class SpreadsheetsController < ApplicationController
   def update
     Rails.logger.info "Received #{params[:spreadsheet]}"
     a = Roo::Spreadsheet.open(params[:spreadsheet])
-    a.header_line = 3
+    a.header_line = 2
     a.each(division: 'DIVISION') do |item|
       puts "> #{item.inspect}"
     end
