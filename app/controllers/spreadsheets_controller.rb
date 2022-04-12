@@ -7,6 +7,7 @@ class SpreadsheetsController < ApplicationController
 
   def update
     Rails.logger.info "Received #{params[:spreadsheet]}"
+    debugger
     Roo::Spreadsheet.open(params[:spreadsheet])
       .sheet('Sheet1')
       .each_row_streaming(offset: 3) do |row|
