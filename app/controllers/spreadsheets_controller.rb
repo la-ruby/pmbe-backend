@@ -31,7 +31,7 @@ class SpreadsheetsController < ApplicationController
               'JR GM$ MTD', 'JR GM$ YTD', 'JR GM%', 'JR GM% MTD',
               'JR GM% YTD', 'PLUS Sales Units', 'PLUS Sales Units 1 Wk Ago',
               'PLUS Sales Units 2 Wk Ago', 'PLUS Sales Units 3 Wk Ago',
-              'PLUS Sales Units Last 4 Weeks','PLUS MTD Sales Units',
+              'PLUS Sales Units Last 4 Weeks', 'PLUS MTD Sales Units',
               'PLUS YTD Sales Units', 'PLUS LTD Sales Units',
               'PLUS EOP Units', 'PLUS WOH Units', 'PLUS Tot OO Units',
               'PLUS Tot OO Retail', 'PLUS Tot OO Cost',
