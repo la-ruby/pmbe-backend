@@ -6,6 +6,6 @@ class SpreadsheetsController < ApplicationController
   end
 
   def update
-    debugger
+    Rails.logger.info "Received #{params[:spreadsheet]}"
   end
 end
