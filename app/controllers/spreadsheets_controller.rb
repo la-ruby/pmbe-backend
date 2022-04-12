@@ -16,7 +16,7 @@ class SpreadsheetsController < ApplicationController
     a = Roo::Spreadsheet.open(params[:spreadsheet])
     # a.header_line = 2
 
-    Product.insert_all(a.each_with_index(HEADINGS_HASH).to_a)
+    Product.insert_all(a.each(HEADINGS_HASH))
     #  next if index == 0
     #  puts "> #{item.inspect}"
     #end
