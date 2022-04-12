@@ -6,7 +6,6 @@ class SpreadsheetsController < ApplicationController
   end
 
   def update
+    debugger
   end
-    
-
 end
