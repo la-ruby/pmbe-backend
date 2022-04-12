@@ -18,8 +18,6 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find_by_display_name! Base64.decode64(params[:display_name])
-  rescue
-    nil
   end
 
   def relax_cors
