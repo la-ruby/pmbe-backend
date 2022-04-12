@@ -5,9 +5,9 @@ class ProductsController < ApplicationController
   before_action :relax_cors
 
   def show
-    respond_to do |format|
+    # respond_to do |format|
       format.json { render json: { vendor_name: 'ABC'} }
-    end
+    # end
   end
 
   private
