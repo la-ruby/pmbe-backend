@@ -9,7 +9,8 @@ class SpreadsheetsController < ApplicationController
     Rails.logger.info "Received #{params[:spreadsheet]}"
     a = Roo::Spreadsheet.open(params[:spreadsheet])
     # a.header_line = 2
-    a.each(division: 'DIVISION') do |item|
+    a.each_with_index(division: 'DIVISION') do |item, index|
+      next if index == 0
       puts "> #{item.inspect}"
     end
     flash[:notice] = "Uploaded"
