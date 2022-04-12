@@ -17,6 +17,8 @@ class SpreadsheetsController < ApplicationController
     # a.header_line = 2
 
     Product.insert_all(a.each(HEADINGS_HASH))
+
+    Product.where(x_division: 'DIVISION').destroy # this is a header that slipped through
     #  next if index == 0
     #  puts "> #{item.inspect}"
     #end
