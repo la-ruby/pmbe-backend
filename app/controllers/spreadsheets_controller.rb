@@ -10,7 +10,7 @@ class SpreadsheetsController < ApplicationController
     a = Roo::Spreadsheet.open(params[:spreadsheet])
     a.header_line = 3
     a.each(division: 'DIVISION') do |item|
-      puts item.inspect
+      puts "> #{item.inspect}"
     end
     flash[:notice] = "Uploaded"
     redirect_to "/upload"
