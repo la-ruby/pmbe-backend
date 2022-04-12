@@ -1,6 +1,6 @@
 # Overridable
 {
-  'TOKEN' => 'testing'
+  'PMBE_TOKEN' => 'testing'
 }.each do |k,v|
   Object.const_set(
     k,
