@@ -3,6 +3,8 @@
     <div class="col">
       <%= form_tag({action: :update,}, multipart: true, method: :patch) do %>
          <%= file_field_tag 'spreadsheet' %>
+         <br>
+	 Token <input>
          <%= submit_tag 'Submit' %>
       <% end %>
     </div>
