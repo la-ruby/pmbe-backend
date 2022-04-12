@@ -6,8 +6,12 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show]
 
   def show
-    json = SpreadsheetsController::HEADINGS_HASH.keys.to_h do |item|
-      [item.sub(/\Ax_/, ''), @product.attributes[item].presence || '-']
+    if @product
+      json = SpreadsheetsController::HEADINGS_HASH.keys.to_h do |item|
+        [item.sub(/\Ax_/, ''), @product.attributes[item].presence || '-']
+      end
+    else
+      json = {}
     end
     render json: json
   end
@@ -16,7 +20,7 @@ class ProductsController < ApplicationController
 
   def set_product
     Rails.logger.info "<< Request for  #{Base64.decode64(params[:displayname])}"
-    @product = Product.find_by_x_displayname! Base64.decode64(params[:displayname])
+    @product = Product.find_by_x_displayname! Base64.decode64(params[:displayname]) rescue nil
   end
 
   def relax_cors
