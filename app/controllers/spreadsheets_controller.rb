@@ -13,8 +13,8 @@ class SpreadsheetsController < ApplicationController
     Rails.logger.info "Received #{params[:spreadsheet]}"
     a = Roo::Spreadsheet.open(params[:spreadsheet])
     # a.header_line = 2
-    debugger
-    a.each_with_index(division: 'DIVISION', subclass: 'SUBCLASS') do |item, index|
+
+    a.each_with_index(HEADINGS_HASH) do |item, index|
       next if index == 0
       puts "> #{item.inspect}"
     end
