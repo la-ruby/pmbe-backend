@@ -1,3 +1,4 @@
+# Must rename this
 class ExperimentsController < ApplicationController
   before_action :set_cors_headers
   before_action :set_experiment, only: %i[ show edit update destroy ]
