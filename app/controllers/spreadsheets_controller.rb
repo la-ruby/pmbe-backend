@@ -20,7 +20,7 @@ class SpreadsheetsController < ApplicationController
     #  next if index == 0
     #  puts "> #{item.inspect}"
     #end
-    flash[:notice] = "Uploaded #{Product.count]"
+    flash[:notice] = "Uploaded #{Product.count}"
     redirect_to "/upload"
   end
 end
