@@ -1,7 +1,7 @@
 <div class="container m-5">
   <div class="row">
     <div class="col">
-      <%= form_tag({action: :update}, multipart: true) do %>
+      <%= form_tag({action: :update,}, multipart: true, method: :patch) do %>
          <%= file_field_tag 'xml_file' %>
          <%= submit_tag 'Submit' %>
       <% end %>
