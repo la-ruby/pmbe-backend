@@ -7,4 +7,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     get "/products/dGVzdGluZw=="
     assert_response :success
   end
+
+  test "should not show" do
+    get "/products/dGVzdGluZw=="
+    assert_response :success
+  end
 end

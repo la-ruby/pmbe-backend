@@ -6,21 +6,26 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show]
 
   def show
-    if @product && params[:token] == ENV['PMBE_TOKEN']
-      json = SpreadsheetsController::HEADINGS_HASH.keys.to_h do |item|
-        [item.sub(/\Ax_/, ''), @product.attributes[item].presence || '-']
-      end
-    else
-      json = {}
-    end
+    json = if @product && params[:token] == ENV['PMBE_TOKEN']
+             SpreadsheetsController::HEADINGS_HASH.keys.to_h do |item|
+               [item.sub(/\Ax_/, ''), @product.attributes[item].presence || '-']
+             end
+           else
+             {}
+           end
     render json: json
   end
 
   private
 
   def set_product
-    Rails.logger.info "<< Request for  #{Base64.decode64(params[:displayname])} with token #{params[:token]}"
-    @product = Product.find_by_x_displayname! Base64.decode64(params[:displayname]) rescue nil
+    decoded = Base64.decode64(params[:displayname])
+    Rails.logger.info "<< Request for  #{decoded} with token #{params[:token]}"
+    @product = begin
+      Product.find_by_x_displayname! decoded
+    rescue StandardError
+      nil
+    end
   end
 
   def relax_cors
