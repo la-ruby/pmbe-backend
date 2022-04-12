@@ -81,4 +81,5 @@ class SpreadsheetsController < ApplicationController
 
   def verify_token
     raise unless params[:token] == ENV['PMBE_TOKEN']
+  end
 end
