@@ -93,4 +93,4 @@ gem "clockwork", "~> 3.0", :git => "https://github.com/Rykian/clockwork", :branc
 gem "sendgrid-ruby", ">= 6.6"
 
 gem "rollbar", ">= 3.3"
-gem 'roo'
+gem 'roo', :git => "https://github.com/roo-rb/roo", :branch => "master"
