@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show ]
 
   def show
-    render json: { vendor_name: "ABC#{rand(1..100)}" }
+    render json: { vendor_name: @product.display_name }
   end
 
   private
