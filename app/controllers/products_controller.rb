@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   def show
     json = Hash[
       SpreadsheetsController::HEADINGS_HASH.keys.collect{|item|
-        [item, @product.attributes[item].presence || '-']
+        [item.sub(/\Ax_/,''), @product.attributes[item].presence || '-']
       }
     ]    
     render json: json
