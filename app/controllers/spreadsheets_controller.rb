@@ -8,11 +8,10 @@ class SpreadsheetsController < ApplicationController
   def update
     Rails.logger.info "Received #{params[:spreadsheet]}"
     debugger
-    Roo::Spreadsheet.open(params[:spreadsheet])
-      .sheet('Sheet1')
-      .each_row_streaming(offset: 3) do |row|
-      next if row[0].is_a?(Roo::Excelx::Cell::Empty)
-      puts row[0]
+    a = Roo::Spreadsheet.open(params[:spreadsheet])
+    a.header_lines = 3
+    a.each(division: 'DIVISION') do |item|
+      puts item.class
     end
     flash[:notice] = "Uploaded"
     redirect_to "/upload"
