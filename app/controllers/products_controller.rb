@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.json { render { vendor_name: 'ABC'} }
+      format.json { render json: { vendor_name: 'ABC'} }
     end
   end
 
