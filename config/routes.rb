@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/products/:display_name', to: 'products#show'
   resource :spreadsheet, only: [:edit, :update]
+  get '/upload', to: 'spreadsheets#edit'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
