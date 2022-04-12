@@ -9,7 +9,7 @@ class SpreadsheetsController < ApplicationController
     Rails.logger.info "Received #{params[:spreadsheet]}"
     a = Roo::Spreadsheet.open(params[:spreadsheet])
     # a.header_line = 2
-    a.each_with_index(division: 'DIVISION') do |item, index|
+    a.each_with_index(division: 'DIVISION', subclass: 'SUBCLASS') do |item, index|
       next if index == 0
       puts "> #{item.inspect}"
     end
