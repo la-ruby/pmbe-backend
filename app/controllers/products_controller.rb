@@ -31,4 +31,8 @@ class ProductsController < ApplicationController
     headers['Access-Control-Request-Method'] = '*'
     headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
   end
+
+  def verify_token
+    raise unless params[:token] == ENV['PMBE_TOKEN']
+  end
 end
