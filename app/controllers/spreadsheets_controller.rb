@@ -2,6 +2,7 @@
 
 # Must rename this
 class SpreadsheetsController < ApplicationController
+  before_action :verify_token, only: [:update]
   HEADINGS = ['DIVISION', 'DEPT NAME', 'CATEGORY', 'CLASS NAME', 'SUBCLASS',
               'STYLE CODE', 'STYLE NAME', 'DISPLAYNAME', 'STYLE COLOR',
               'VENDOR NAME', 'PHOTO', 'PLUS PHOTO', 'COLOR NAME',
