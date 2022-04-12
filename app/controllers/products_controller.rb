@@ -2,7 +2,7 @@
 
 # Must rename this
 class ProductsController < ApplicationController
-  before_action :verify_token, only: [:update]
+  before_action :verify_token, only: [:show]
   before_action :relax_cors
   before_action :set_product, only: %i[show]
 
